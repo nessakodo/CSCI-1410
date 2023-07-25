@@ -15,7 +15,10 @@
 def calc_celsius(fahrenheit):
     return round((fahrenheit - 32) * (5/9), 2)
 
-def output_data(celsius):
+def output_data(fahrenheit):
+    celsius = calc_celsius(fahrenheit)
+    print(f"{fahrenheit} Fahrenheit is {celsius} degrees Celsius.")
+
     if celsius < -20:
         print("The temperature is very cold. Bundle up!")
     elif -20 <= celsius < 0:
@@ -29,13 +32,24 @@ def output_data(celsius):
     else:
         print("The temperature is hot. Sunscreen is necessary!")
 
-def main():
+def read_temp(temperature_list):
+    for f in temperature_list:
+        output_data(f)
+
+def get_temperature_list():
     try:
-        f = float(input("What is the Fahrenheit temperature? "))
-        c = calc_celsius(f)
-        output_data(c)
+        num_temperatures = int(input("How many temperatures do you want to convert? "))
+        temperature_list = []
+        for i in range(num_temperatures):
+            f = float(input(f"Enter temperature {i+1} in Fahrenheit: "))
+            temperature_list.append(f)
+        return temperature_list
     except ValueError:
-        print("Invalid input. Please enter a valid Fahrenheit temperature as a number.")
+        print("Invalid input. Please enter valid Fahrenheit temperatures as numbers.")
+
+def main():
+    temperature_list = get_temperature_list()
+    if temperature_list:
+        read_temp(temperature_list)
 
 main()
-

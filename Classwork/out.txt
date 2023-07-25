@@ -1,0 +1,8 @@
+john.doe@ucdenver.edu doej
+jane.smith@ucdenver.edu smithj
+sara.thomas@ucdenver.edu thomass
+frank.brown@ucdenver.edu brownf
+mike.devis@ucdenver.edu devism
+william.smith@ucdenver.edu smithw
+jessica.garcia@ucdenver.edu garciaj
+bob.lopez@ucdenver.edu lopezb

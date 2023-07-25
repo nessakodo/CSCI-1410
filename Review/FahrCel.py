@@ -15,9 +15,8 @@
 def calc_celsius(fahrenheit):
     return round((fahrenheit - 32) * (5/9), 2)
 
-def output_data(fahrenheit):
-    celsius = calc_celsius(fahrenheit)
-    print(f"{fahrenheit} Fahrenheit is {celsius} degrees Celsius.")
+def output_data(fahrenheit, celsius):
+    print(f"{fahrenheit} Fahrenheit -> {celsius} Celsius.")
 
     if celsius < -20:
         print("The temperature is very cold. Bundle up!")
@@ -33,8 +32,18 @@ def output_data(fahrenheit):
         print("The temperature is hot. Sunscreen is necessary!")
 
 def read_temp(temperature_list):
+    list_f = []
+    list_c = []
+
     for f in temperature_list:
-        output_data(f)
+        c = calc_celsius(f)
+        list_f.append(f)
+        list_c.append(c)
+        output_data(f, c)
+
+    print("\nSummary:")
+    print("List of Fahrenheit temperatures:", list_f)
+    print("List of Celsius conversions:", list_c)
 
 def get_temperature_list():
     try:

@@ -12,10 +12,13 @@
 #   Output = (input - 32) * (5/9)
 ################################################################
 
+def calc_celsius(fahrenheit):
+    return round((fahrenheit - 32) * (5/9), 2)
+
 def main():
     try:
         f = float(input("What is the Fahrenheit temperature? "))
-        c = (f - 32) * (5/9)
+        c = calc_celsius(f)
         print("The temperature is", c, "degrees Celsius.")
     except ValueError:
         print("Invalid input. Please enter a valid Fahrenheit temperature as a number.")

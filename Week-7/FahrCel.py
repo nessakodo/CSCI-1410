@@ -13,11 +13,11 @@
 ################################################################
 
 def main():
+    try:
+        f = float(input("What is the Fahrenheit temperature? "))
+        c = (f - 32) * (5/9)
+        print("The temperature is", c, "degrees Celsius.")
+    except ValueError:
+        print("Invalid input. Please enter a valid Fahrenheit temperature as a number.")
 
-    
-    f = eval(input("What is the Fahrenheit temperature? "))
-    
-    c = (f - 32) * (5/9)
-
-    print("The temperature is", c, "degrees Celsius.")
-
+main()
